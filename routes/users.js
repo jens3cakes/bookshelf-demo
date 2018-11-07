@@ -44,7 +44,7 @@ router.post('/', (req, res) => {
     })
     .catch(err => console.log(err))
 });
-Object.keys(data);
+// Object.keys(data);
 
 router.put('/:id', (req, res) => {
   const id = req.params.id;

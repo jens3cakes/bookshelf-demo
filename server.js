@@ -3,14 +3,17 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const usersRouter = require('./routes/users')
+const postsRouter = require('./routes/posts')
 const PORT = process.env.EXPRESS_HOST_PORT || 3000;
 //const POSTGRES_HOSTNAME = process.env.POSTGRES_HOSTNAME;
-// app.get('/', (req, res)=>{
+ //app.get('/users', (req, res)=>{
 //   res.send('hello')
 // })
 // console.log('hello') smokeTest
 app.use(bodyParser.urlencoded({extended:true}));
 app.use('/users', usersRouter);
+app.use('/posts', postsRouter);
+
 
 app.listen(PORT, () => {
   console.log(`Server is listening on ${PORT}`);
